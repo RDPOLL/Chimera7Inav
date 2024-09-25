@@ -142,7 +142,8 @@ set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 60
 set dynamic_gyro_notch_mode = 3D
 set setpoint_kalman_q = 200
-set ins_gravity_cmss =  975.810
+set gyro_zero_y = 5
+set ins_gravity_cmss =  969.997
 set acc_hardware = BMI270
 set acczero_x = -1
 set acczero_y = -29
@@ -231,9 +232,10 @@ mixer_profile 2
 # profile
 profile 1
 
-set mc_p_pitch = 44
+set mc_p_pitch = 42
 set mc_i_pitch = 85
 set mc_d_pitch = 28
+set mc_p_roll = 38
 set mc_i_roll = 75
 set mc_d_roll = 26
 set mc_p_yaw = 40
