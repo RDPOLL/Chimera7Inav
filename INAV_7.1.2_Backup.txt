@@ -64,7 +64,7 @@ blackbox -PEAKS_Y
 # Receiver: Channel map
 
 # Ports
-serial 0 2048 115200 115200 0 115200
+serial 0 4096 115200 115200 0 115200
 serial 3 0 115200 115200 0 115200
 serial 5 2 115200 230400 0 115200
 
@@ -123,10 +123,14 @@ osd_layout 1 14 1 0 V
 osd_layout 1 32 24 9 V
 
 # Programming: logic
-logic 0 1 -1 15 1 12 0 900 0
+logic 0 1 -1 15 1 12 0 1000 0
 logic 1 1 -1 37 4 0 0 3 0
 logic 2 1 -1 14 4 1 0 1 0
-logic 3 1 -1 25 4 2 0 0 0
+logic 3 1 -1 14 4 1 0 2 0
+logic 4 1 -1 2 4 2 0 1 0
+logic 5 1 -1 12 4 4 0 0 0
+logic 6 1 5 25 4 2 0 0 0
+logic 7 1 4 25 4 3 0 0 0
 
 # Programming: global variables
 
@@ -142,8 +146,8 @@ set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 60
 set dynamic_gyro_notch_mode = 3D
 set setpoint_kalman_q = 200
-set gyro_zero_y = 5
-set ins_gravity_cmss =  969.331
+set gyro_zero_y = 1
+set ins_gravity_cmss =  977.029
 set acc_hardware = BMI270
 set acczero_x = -1
 set acczero_y = -29
@@ -153,12 +157,12 @@ set accgain_y = 4081
 set accgain_z = 4071
 set align_mag = CW270FLIP
 set mag_hardware = QMC5883
-set magzero_x = -270
-set magzero_y = 103
-set magzero_z = 1486
-set maggain_x = 1168
-set maggain_y = 1188
-set maggain_z = 1697
+set magzero_x = 335
+set magzero_y = -661
+set magzero_z = -1079
+set maggain_x = 1188
+set maggain_y = 1174
+set maggain_z = 1776
 set align_mag_roll = 150
 set align_mag_pitch = 1800
 set align_mag_yaw = 900
@@ -200,10 +204,10 @@ set osd_plus_code_short = 4
 set i2c_speed = 800KHZ
 set tz_offset = 60
 set tz_automatic_dst = EU
-set vtx_channel = 2
-set vtx_power = 2
-set vtx_low_power_disarm = UNTIL_FIRST_ARM
-set vtx_max_power_override = 1200
+set vtx_band = 3
+set vtx_channel = 6
+set vtx_power = 3
+set vtx_max_power_override = 600
 
 # mixer_profile
 mixer_profile 1
@@ -232,9 +236,9 @@ mixer_profile 2
 # profile
 profile 1
 
-set mc_p_pitch = 46
-set mc_i_pitch = 85
-set mc_d_pitch = 28
+set mc_p_pitch = 42
+set mc_i_pitch = 90
+set mc_d_pitch = 34
 set mc_p_roll = 38
 set mc_i_roll = 75
 set mc_d_roll = 30
