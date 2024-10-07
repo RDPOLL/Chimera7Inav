@@ -91,7 +91,7 @@ aux 4 13 5 1500 2100
 #wp 0 invalid
 
 # OSD [osd_layout]
-osd_layout 0 0 23 3 V
+osd_layout 0 0 27 1 H
 osd_layout 0 1 10 1 H
 osd_layout 0 2 0 0 V
 osd_layout 0 3 8 6 V
@@ -109,13 +109,16 @@ osd_layout 0 28 21 9 H
 osd_layout 0 30 1 12 V
 osd_layout 0 32 10 1 V
 osd_layout 0 34 11 3 V
-osd_layout 0 55 4 5 V
+osd_layout 0 55 5 5 V
 osd_layout 0 85 22 7 V
 osd_layout 0 96 4 8 V
 osd_layout 0 97 2 14 V
 osd_layout 0 100 22 4 H
-osd_layout 0 105 6 3 V
-osd_layout 0 112 21 4 V
+osd_layout 0 105 7 3 V
+osd_layout 0 109 21 4 H
+osd_layout 0 110 21 3 V
+osd_layout 0 111 21 4 V
+osd_layout 0 112 21 5 V
 osd_layout 1 0 25 0 V
 osd_layout 1 6 2 10 V
 osd_layout 1 11 24 10 V
@@ -146,9 +149,8 @@ set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 60
 set dynamic_gyro_notch_mode = 3D
 set setpoint_kalman_q = 200
-set gyro_zero_x = -1
-set gyro_zero_y = 4
-set ins_gravity_cmss =  972.374
+set gyro_zero_y = 5
+set ins_gravity_cmss =  970.423
 set acc_hardware = BMI270
 set acczero_x = -1
 set acczero_y = -29
@@ -199,7 +201,6 @@ set osd_time_alarm = 0
 set osd_alt_alarm = 0
 set osd_dist_alarm = 0
 set osd_neg_alt_alarm = 0
-set osd_crosshairs_style = TYPE3
 set osd_camera_fov_h = 150
 set osd_camera_fov_v = 120
 set osd_left_sidebar_scroll = ALTITUDE
@@ -262,9 +263,9 @@ set tpa_rate = 20
 set tpa_breakpoint = 1200
 set rc_expo = 75
 set rc_yaw_expo = 75
-set roll_rate = 70
-set pitch_rate = 70
-set yaw_rate = 60
+set roll_rate = 60
+set pitch_rate = 60
+set yaw_rate = 50
 set ez_filter_hz = 90
 
 # profile
