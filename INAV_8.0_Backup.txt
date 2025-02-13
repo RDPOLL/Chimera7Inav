@@ -1,8 +1,8 @@
- diff all
+diff all
 
 # version
-# INAV/SPEEDYBEEF7V3 7.1.2 Jun 1 2024 / 00:54:34 (4e1e59eb)
-# GCC-10.3.1 20210824 (release)
+# INAV/SPEEDYBEEF7V3 8.0.0 Jan 21 2025 / 16:13:10 (ec2106af) 
+# GCC-13.2.1 20231009
 
 # start the command batch
 batch start
@@ -60,13 +60,14 @@ blackbox -GYRO_RAW
 blackbox -PEAKS_R
 blackbox -PEAKS_P
 blackbox -PEAKS_Y
+blackbox SERVOS
 
 # Receiver: Channel map
 
 # Ports
 serial 0 4096 115200 115200 0 115200
 serial 3 0 115200 115200 0 115200
-serial 5 2 115200 230400 0 115200
+serial 5 2 115200 115200 0 115200
 
 # LEDs
 
@@ -142,15 +143,13 @@ logic 7 1 4 25 4 3 0 0 0
 # OSD: custom elements
 
 # master
-set looptime = 500
 set gyro_main_lpf_hz = 90
 set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 60
 set dynamic_gyro_notch_mode = 3D
 set setpoint_kalman_q = 200
-set gyro_zero_x = 1
 set gyro_zero_y = 6
-set ins_gravity_cmss = 969.496
+set ins_gravity_cmss =  969.917
 set acc_hardware = BMI270
 set acczero_x = -1
 set acczero_y = -29
@@ -179,7 +178,6 @@ set failsafe_min_distance_procedure = LAND
 set current_meter_scale = 385
 set small_angle = 180
 set applied_defaults = 5
-set gps_provider = UBLOX
 set gps_sbas_mode = EGNOS
 set gps_ublox_use_galileo = ON
 set gps_ublox_use_glonass = ON
@@ -194,7 +192,6 @@ set nav_rth_allow_landing = FS_ONLY
 set nav_rth_altitude = 4000
 set nav_rth_home_altitude = 1000
 set nav_rth_trackback_mode = FS
-set nav_mc_bank_angle = 35
 set nav_mc_braking_bank_angle = 45
 set osd_video_system = PAL
 set osd_time_alarm = 0
@@ -214,31 +211,7 @@ set vtx_channel = 6
 set vtx_power = 3
 set vtx_max_power_override = 600
 
-# mixer_profile
-mixer_profile 1
-
-set model_preview_type = 3
-
-# Mixer: motor mixer
-
-mmix reset
-
-mmix 0 1.000 -1.000 1.000 -1.000
-mmix 1 1.000 -1.000 -1.000 1.000
-mmix 2 1.000 1.000 1.000 1.000
-mmix 3 1.000 1.000 -1.000 -1.000
-
-# Mixer: servo mixer
-
-# mixer_profile
-mixer_profile 2
-
-
-# Mixer: motor mixer
-
-# Mixer: servo mixer
-
-# profile
+# control_profile
 control_profile 1
 
 set mc_p_pitch = 42
@@ -254,11 +227,11 @@ set max_angle_inclination_pit = 400
 set dterm_lpf_hz = 80
 set dterm_lpf_type = PT3
 set mc_iterm_relax = RPY
-set d_boost_min = 0.800
-set d_boost_max = 1.200
-set antigravity_gain = 2.000
-set antigravity_accelerator = 5.000
-set smith_predictor_delay = 1.500
+set d_boost_min =  0.800
+set d_boost_max =  1.200
+set antigravity_gain =  2.000
+set antigravity_accelerator =  5.000
+set smith_predictor_delay =  1.500
 set tpa_rate = 20
 set tpa_breakpoint = 1200
 set rc_expo = 75
@@ -268,20 +241,45 @@ set pitch_rate = 60
 set yaw_rate = 50
 set ez_filter_hz = 90
 
-# profile
+# control_profile
 control_profile 2
 
 
-# profile
+# control_profile
 control_profile 3
 
+
+# mixer_profile
+mixer_profile 1
+
+set model_preview_type = 3
+
+# Mixer: motor mixer
+
+mmix reset
+
+mmix 0  1.000 -1.000  1.000 -1.000
+mmix 1  1.000 -1.000 -1.000  1.000
+mmix 2  1.000  1.000  1.000  1.000
+mmix 3  1.000  1.000 -1.000 -1.000
+
+# Mixer: servo mixer
+
+# mixer_profile
+mixer_profile 2
+
+
+# Mixer: motor mixer
+
+# Mixer: servo mixer
 
 # battery_profile
 battery_profile 1
 
+set bat_cells = 6
 set vbat_min_cell_voltage = 340
 set vbat_warning_cell_voltage = 355
-set throttle_idle = 5.000
+set throttle_idle =  5.000
 set failsafe_throttle = 1250
 set nav_mc_hover_thr = 1350
 
@@ -298,12 +296,11 @@ set vbat_min_cell_voltage = 340
 set vbat_warning_cell_voltage = 355
 
 # restore original profile selection
-mixer_profile 1
 control_profile 1
+mixer_profile 1
 battery_profile 1
-
-
-#
 
 # save configuration
 save
+
+# 
