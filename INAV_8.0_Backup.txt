@@ -106,6 +106,8 @@ osd_layout 0 14 5 1 V
 osd_layout 0 15 4 7 V
 osd_layout 0 22 15 11 V
 osd_layout 0 23 5 11 V
+osd_layout 0 25 26 6 H
+osd_layout 0 26 22 9 H
 osd_layout 0 28 21 9 H
 osd_layout 0 30 1 12 V
 osd_layout 0 32 10 1 V
@@ -118,8 +120,8 @@ osd_layout 0 100 22 4 H
 osd_layout 0 105 7 3 V
 osd_layout 0 109 21 4 H
 osd_layout 0 110 21 3 V
-osd_layout 0 111 21 4 V
-osd_layout 0 112 21 5 V
+osd_layout 0 111 21 5 V
+osd_layout 0 112 21 4 V
 osd_layout 1 0 25 0 V
 osd_layout 1 6 2 10 V
 osd_layout 1 11 24 10 V
@@ -148,8 +150,9 @@ set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 60
 set dynamic_gyro_notch_mode = 3D
 set setpoint_kalman_q = 200
-set gyro_zero_y = 4
-set ins_gravity_cmss =  976.754
+set gyro_zero_y = 2
+set gyro_zero_z = -1
+set ins_gravity_cmss =  979.197
 set acc_hardware = BMI270
 set acczero_x = 4
 set acczero_y = -28
@@ -198,11 +201,12 @@ set osd_time_alarm = 0
 set osd_alt_alarm = 0
 set osd_dist_alarm = 0
 set osd_neg_alt_alarm = 0
+set osd_snr_alarm = 5
 set osd_camera_fov_h = 150
 set osd_camera_fov_v = 120
 set osd_left_sidebar_scroll = ALTITUDE
 set osd_right_sidebar_scroll = SPEED
-set osd_plus_code_short = 4
+set osd_plus_code_short = 2
 set i2c_speed = 800KHZ
 set tz_offset = 60
 set tz_automatic_dst = EU
