@@ -96,7 +96,7 @@ osd_layout 0 0 27 1 H
 osd_layout 0 1 1 3 H
 osd_layout 0 2 0 0 V
 osd_layout 0 3 8 6 V
-osd_layout 0 6 21 11 V
+osd_layout 0 6 2 12 V
 osd_layout 0 7 13 13 V
 osd_layout 0 9 22 13 V
 osd_layout 0 11 20 1 V
@@ -109,11 +109,12 @@ osd_layout 0 23 2 10 V
 osd_layout 0 25 26 6 H
 osd_layout 0 26 23 8 V
 osd_layout 0 28 21 9 H
-osd_layout 0 30 2 12 V
+osd_layout 0 30 1 9 V
 osd_layout 0 32 8 1 V
 osd_layout 0 34 11 3 V
-osd_layout 0 35 22 10 V
+osd_layout 0 35 23 11 V
 osd_layout 0 40 2 11 V
+osd_layout 0 48 11 6 H
 osd_layout 0 55 3 5 V
 osd_layout 0 85 23 7 V
 osd_layout 0 96 2 8 V
@@ -124,6 +125,7 @@ osd_layout 0 109 15 7 H
 osd_layout 0 110 23 3 V
 osd_layout 0 111 22 5 V
 osd_layout 0 112 22 4 V
+osd_layout 0 147 21 10 V
 osd_layout 1 0 25 0 V
 osd_layout 1 6 2 10 V
 osd_layout 1 11 24 10 V
@@ -139,12 +141,18 @@ logic 4 1 -1 2 4 2 0 1 0
 logic 5 1 -1 12 4 4 0 0 0
 logic 6 1 5 25 4 2 0 0 0
 logic 7 1 4 25 4 3 0 0 0
+logic 9 1 -1 16 2 7 0 1000 0
+logic 10 1 -1 17 4 9 2 2 0
+logic 12 1 -1 16 2 1 4 10 0
+logic 13 1 -1 17 4 12 0 1000 0
+logic 15 1 -1 14 2 7 4 13 0
 
 # Programming: global variables
 
 # Programming: PID controllers
 
 # OSD: custom elements
+osd_custom_elements 0 20 15 2 153 2 16 0 0 ""
 
 # master
 set gyro_main_lpf_hz = 90
@@ -152,8 +160,8 @@ set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 60
 set dynamic_gyro_notch_mode = 3D
 set setpoint_kalman_q = 200
-set gyro_zero_y = 4
-set ins_gravity_cmss =  977.252
+set gyro_zero_y = 6
+set ins_gravity_cmss =  975.265
 set acc_hardware = BMI270
 set acczero_x = 4
 set acczero_y = -28
