@@ -19,7 +19,8 @@ defaults noreboot
 # safehome
 
 # Fixed Wing Approach
-fwapproach 8 6000 500 0 0 0 0
+fwapproach 0 74700 69200 0 0 0 1
+fwapproach 8 12200 6700 0 0 0 0
 
 # features
 feature GPS
@@ -67,7 +68,7 @@ blackbox SERVOS
 # Ports
 serial 0 4096 115200 115200 0 115200
 serial 3 0 115200 115200 0 115200
-serial 5 2 115200 115200 0 115200
+serial 5 2 115200 57600 0 115200
 
 # LEDs
 
@@ -80,8 +81,9 @@ aux 0 0 0 1500 2100
 aux 1 1 3 1500 2100
 aux 2 11 2 1200 1800
 aux 3 10 2 1800 2100
-aux 4 52 4 1500 2100
-aux 5 13 5 1500 2100
+aux 4 28 1 1800 2100
+aux 5 52 4 1500 2100
+aux 6 13 5 1500 2100
 
 # Adjustments [adjrange]
 
@@ -111,6 +113,7 @@ osd_layout 0 25 26 6 H
 osd_layout 0 26 23 8 V
 osd_layout 0 28 21 9 H
 osd_layout 0 30 1 9 V
+osd_layout 0 31 3 2 V
 osd_layout 0 32 8 1 V
 osd_layout 0 34 11 3 V
 osd_layout 0 35 23 11 V
@@ -120,7 +123,7 @@ osd_layout 0 55 3 5 V
 osd_layout 0 85 23 7 V
 osd_layout 0 96 2 8 V
 osd_layout 0 97 2 14 V
-osd_layout 0 100 3 3 V
+osd_layout 0 100 3 4 V
 osd_layout 0 105 25 1 V
 osd_layout 0 109 15 7 H
 osd_layout 0 110 23 3 V
@@ -165,8 +168,8 @@ set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 60
 set dynamic_gyro_notch_mode = 3D
 set setpoint_kalman_q = 200
-set gyro_zero_y = 5
-set ins_gravity_cmss =  974.759
+set gyro_zero_y = 4
+set ins_gravity_cmss =  977.553
 set acc_hardware = BMI270
 set acczero_x = 4
 set acczero_y = -28
@@ -196,10 +199,15 @@ set current_meter_scale = 385
 set small_angle = 180
 set applied_defaults = 5
 set gps_sbas_mode = EGNOS
+set gps_auto_config = OFF
 set gps_ublox_use_galileo = ON
 set gps_ublox_use_glonass = ON
+set gps_min_sats = 10
+set gps_ublox_nav_hz = 5
 set airmode_type = THROTTLE_THRESHOLD
 set nav_user_control_mode = CRUISE
+set nav_wp_enforce_altitude = 50
+set nav_fw_wp_tracking_accuracy = 2
 set nav_fw_wp_turn_smoothing = ON
 set nav_auto_speed = 1944
 set nav_max_auto_speed = 2000
