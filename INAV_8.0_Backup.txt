@@ -20,7 +20,7 @@ defaults noreboot
 
 # Fixed Wing Approach
 fwapproach 0 74700 69200 0 0 0 1
-fwapproach 8 12200 6700 0 0 0 0
+fwapproach 8 6000 500 0 0 0 0
 
 # features
 feature GPS
@@ -92,7 +92,15 @@ aux 6 13 5 1500 2100
 # temp_sensor
 
 # Mission Control Waypoints [wp]
-#wp 0 invalid
+#wp 3 valid
+wp 0 1 474292304 88271123 10000 0 0 0 0
+wp 1 1 474321118 88349015 10000 0 0 0 0
+wp 2 1 474291578 88272625 10000 0 0 0 165
+wp 3 1 474515842 88073552 72600 0 0 1 0
+wp 4 1 474585919 87999844 73200 0 0 1 0
+wp 5 1 474330516 88097692 73300 0 0 1 0
+wp 6 1 474308235 88293868 77900 0 0 1 0
+wp 7 1 474295062 88265839 77900 0 0 1 165
 
 # OSD [osd_layout]
 osd_layout 0 0 27 1 H
@@ -168,8 +176,8 @@ set dynamic_gyro_notch_q = 250
 set dynamic_gyro_notch_min_hz = 60
 set dynamic_gyro_notch_mode = 3D
 set setpoint_kalman_q = 200
-set gyro_zero_y = 4
-set ins_gravity_cmss =  977.553
+set gyro_zero_y = 5
+set ins_gravity_cmss =  974.864
 set acc_hardware = BMI270
 set acczero_x = 4
 set acczero_y = -28
@@ -179,12 +187,12 @@ set accgain_y = 4082
 set accgain_z = 4074
 set align_mag = CW270FLIP
 set mag_hardware = QMC5883
-set magzero_x = 157
-set magzero_y = -556
-set magzero_z = -869
-set maggain_x = 1209
-set maggain_y = 1130
-set maggain_z = 1717
+set magzero_x = 228
+set magzero_y = -412
+set magzero_z = -736
+set maggain_x = 1192
+set maggain_y = 1103
+set maggain_z = 1651
 set align_mag_roll = 150
 set align_mag_pitch = 1800
 set align_mag_yaw = 900
@@ -205,21 +213,24 @@ set gps_ublox_use_glonass = ON
 set gps_min_sats = 10
 set gps_ublox_nav_hz = 5
 set airmode_type = THROTTLE_THRESHOLD
+set nav_landing_bump_detection = ON
 set nav_user_control_mode = CRUISE
 set nav_wp_enforce_altitude = 50
+set nav_wp_max_safe_distance = 1000
 set nav_fw_wp_tracking_accuracy = 2
-set nav_fw_wp_turn_smoothing = ON
+set nav_fw_wp_turn_smoothing = ON-CUT
 set nav_auto_speed = 1944
 set nav_max_auto_speed = 2000
 set nav_manual_speed = 2000
 set nav_land_maxalt_vspd = 100
-set nav_land_slowdown_maxalt = 1000
 set nav_rth_climb_first_stage_mode = EXTRA
 set nav_rth_climb_first_stage_altitude = 2000
 set nav_rth_allow_landing = FS_ONLY
-set nav_rth_altitude = 4000
+set nav_rth_altitude = 10000
 set nav_rth_home_altitude = 1000
 set nav_rth_trackback_mode = FS
+set nav_mc_bank_angle = 30
+set nav_mc_wp_slowdown = OFF
 set osd_video_system = PAL
 set osd_time_alarm = 0
 set osd_alt_alarm = 0
@@ -309,7 +320,7 @@ set vbat_min_cell_voltage = 340
 set vbat_warning_cell_voltage = 355
 set throttle_idle =  5.000
 set failsafe_throttle = 1250
-set nav_mc_hover_thr = 1350
+set nav_mc_hover_thr = 1370
 
 # battery_profile
 battery_profile 2
